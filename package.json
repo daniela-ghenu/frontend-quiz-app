@@ -1,0 +1,12 @@
+{
+  "name": "frontend-quiz-app",
+  "version": "1.0.0",
+  "description": "A simple web quiz app where users choose a subject, answer multiple-choice questions, get instant feedback, and view their final score.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniela",
+  "license": "MIT"
+}
