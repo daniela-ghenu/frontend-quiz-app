@@ -1,0 +1,6 @@
+# Ignore Vite files
+dist/
+public/
+
+# Ignore dependency locks
+package-lock.json
