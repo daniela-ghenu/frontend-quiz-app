@@ -22,11 +22,11 @@ export default {
       center: true,
       padding: {
         DEFAULT: '1.5rem',
-        sm: '0',
+        md: '0',
       },
       screens: {
         sm: '640px',
-        lg: '1160px',
+        md: '1160px',
       }
     },
     fontFamily: {
