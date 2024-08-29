@@ -1,0 +1,21 @@
+<header class="py-4 md:py-10 lg:py-20">
+  <div class="flex justify-between container">  
+    <span class="quizz-subject"></span>
+    <!-- Light/Dark theme switcher -->
+    <label for="theme-toggle" class="inline-flex items-center space-x-2 cursor-pointer">
+      <svg class="size-4 md:size-auto" width="24" height="24" aria-hidden="true" focusable="false">
+        <title>Light Theme Icon</title>
+        <use xlink:href="#icon-sun-dark"></use>
+      </svg>
+      <span class="relative">
+        <input id="theme-toggle" type="checkbox" class="hidden peer">
+        <div class="w-8 h-5 md:w-10 md:h-[1.6rem] rounded-full bg-purple"></div>
+        <div class="absolute inset-y-0 md:inset-y-[1px] left-0 m-1 size-3 md:size-4 rounded-full bg-white peer-checked:translate-x-full transition-all"></div>
+      </span>
+      <svg class="size-4 md:size-auto" width="24" height="24" aria-hidden="true" focusable="false">
+        <title>Dark Theme Icon</title>
+        <use xlink:href="#icon-moon-dark"></use>
+      </svg>
+    </label>
+  </div>
+</header>
