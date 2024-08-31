@@ -3,9 +3,11 @@ export default {
   content: ["./*.html", "./src/**/*.{html,js,hbs}"],
   theme: {
     screens: {
-      'sm': '375px',
+      'sm': '576px',
       'md': '768px',
-      'lg': '1440px'
+      'lg': '992px',
+      'xl': '1200px',
+      '2xl': '1440px'
     },
     colors: {
       "purple": "#A729F5",
@@ -20,14 +22,7 @@ export default {
     },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1.5rem',
-        md: '0',
-      },
-      screens: {
-        sm: '640px',
-        md: '1160px',
-      }
+      padding: '1.5rem',
     },
     fontFamily: {
       sans: ["Rubik", 'sans-serif'],
@@ -35,6 +30,26 @@ export default {
     },
   },
 
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '540px',
+          },
+          '@screen md': {
+            maxWidth: '640px',
+          },
+          '@screen lg': {
+            maxWidth: '860px',
+          },
+          '@screen xl': {
+            maxWidth: '1160px',
+          },
+        }
+      })
+    }
+  ],
 }
 
