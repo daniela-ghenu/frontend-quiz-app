@@ -6,15 +6,15 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 		<title>Frontend Mentor | Frontend quiz app</title>
 	</head>
-	<body class="font-sans font-normal bg-light-grey text-dark-navy">
-
+	<body class="overflow-x-hidden font-sans font-normal text-dark-navy bg-light-grey bg-no-repeat bg-mobile-light md:bg-tablet-light xl:bg-desktop-light xl:bg-cover">
 		{{> sprite}}
-
+    
 		{{> header}}
 
-		<main class="pt-8">
+		<main class="pt-8 md:pt-0">
 			{{> @partial-block}}
 		</main>
+
 		<script src="./src/index.js" type="module"></script>
 	</body>
 </html>
