@@ -1,5 +1,5 @@
 {{#> layout}}
-  <div class="container flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
+  <section class="container flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
     <div class="heading xl:w-[40%]">
       <h1 class="text-[2.5rem] md:text-[4rem] font-light leading-none mb-4 xl:mb-12">
         Welcome to the <span class="font-medium inline md:block">Frontend Quiz!</span>
@@ -7,16 +7,18 @@
       <p class="md:text-xl italic text-grey-navy">Pick a subject to get started.</p>
     </div>
     <div class="content lg:max-w-3xl xl:w-[48%]">
-      <div class="flex flex-col gap-4 md:gap-6">
+      <ul class="flex flex-col gap-4 md:gap-6">
         {{#each quizzes}}
-          <button class="flex items-center gap-4 p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" type="button">
+         <li>
+          <button class="flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" type="button">
             <span class="p-2 rounded-lg" style="background-color: {{iconBgColor}};">
               <img class="size-7 md:size-auto" src="{{icon}}" alt="{{title}} icon">
             </span>
             <h2 class="text-lg font-medium md:text-[1.75rem]">{{title}}</h2>
           </button>
+         </li>
         {{/each}}
-      </div>
+        </ul>
     </div>
-  </div>
+  </section>
 {{/layout}}
