@@ -1,24 +1,70 @@
 {{#> layout}}
-  <section class="container flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
-    <div class="heading xl:w-[40%]">
-      <h1 class="text-[2.5rem] md:text-[4rem] font-light leading-none mb-4 xl:mb-12">
-        Welcome to the <span class="font-medium inline md:block">Frontend Quiz!</span>
-      </h1>
-      <p class="md:text-xl italic text-grey-navy">Pick a subject to get started.</p>
-    </div>
-    <div class="content lg:max-w-3xl xl:w-[48%]">
-      <ul class="flex flex-col gap-4 md:gap-6">
-        {{#each quizzes}}
-         <li>
-          <button class="flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" type="button">
-            <span class="p-2 rounded-lg" style="background-color: {{iconBgColor}};">
-              <img class="size-7 md:size-auto" src="{{icon}}" alt="{{title}} icon">
-            </span>
-            <h2 class="text-lg font-medium md:text-[1.75rem]">{{title}}</h2>
-          </button>
-         </li>
-        {{/each}}
-        </ul>
-    </div>
-  </section>
+<section>
+  <form>
+    <fieldset>
+      <legend>
+        <span>Question 6 of 10</span>
+        <h1>Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h1>
+        <div class="progress-bar" aria-hidden="true">
+          <div class="progress">
+          </div>
+        </div>
+      </legend>
+      
+      <div>
+        <div class="answers | flex flex-col gap-4">
+          <label class="answer">
+            <input class="sr-only" type="radio" name="answer" value="4.5 : 1">
+            <span>4.5 : 1</span>
+          </label>
+    
+          <label class="answer">
+            <input class="sr-only" type="radio" name="answer" value="3 : 1">
+            <span>3 : 1</span>
+          </label>
+
+          <label class="answer">
+            <input class="sr-only" type="radio" name="answer" value="2.5 : 1">
+            <span>2.5 : 1</span>
+          </label>
+
+          <label class="answer">
+            <input class="sr-only" type="radio" name="answer" value="5 : 1">
+            <span>5 : 1</span>
+          </label>
+        </div>
+
+        <input type="submit" value="Submit Answer">
+
+        <div class="">
+          <svg>...</svg>
+          <p>Please, select an answer</p>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</section>
 {{/layout}}
+
+<!-- <section class="container flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
+  <div class="heading xl:w-[40%]">
+    <h1 class="text-[2.5rem] md:text-[4rem] font-light leading-none mb-4 xl:mb-12">
+      Welcome to the <span class="font-medium inline md:block">Frontend Quiz!</span>
+    </h1>
+    <p class="md:text-xl italic text-grey-navy">Pick a subject to get started.</p>
+  </div>
+  <div class="content lg:max-w-3xl xl:w-[48%]">
+    <ul class="flex flex-col gap-4 md:gap-6">
+      {{#each quizzes}}
+       <li>
+        <button class="flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" type="button">
+          <span class="p-2 rounded-lg" style="background-color: {{iconBgColor}};">
+            <img class="size-7 md:size-auto" src="{{icon}}" alt="{{title}} icon">
+          </span>
+          <h2 class="text-lg font-medium md:text-[1.75rem]">{{title}}</h2>
+        </button>
+       </li>
+      {{/each}}
+      </ul>
+  </div>
+</section> -->

@@ -19,3 +19,18 @@
     src: url(/fonts/Rubik-Italic-VariableFont_wght.ttf) format('truetype');
   }
 }
+
+@layer components {
+  .answers {
+    counter-reset: count;
+  }
+
+  .answer {
+    counter-increment: count;
+
+    &::before {
+      content:counter(count, upper-alpha);
+      @apply me-2 px-2 py-1 border border-purple rounded-md;
+    }
+  }
+}
