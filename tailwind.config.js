@@ -60,7 +60,7 @@ export default {
             maxWidth: '640px',
           },
           '@screen lg': {
-            maxWidth: '860px',
+            maxWidth: '768px',
           },
           '@screen xl': {
             maxWidth: '1160px',
