@@ -29,8 +29,9 @@
     counter-increment: count;
 
     &::before {
-      content:counter(count, upper-alpha);
-      @apply me-2 px-2 py-1 border border-purple rounded-md;
+      --tw-content: counter(count, upper-alpha);
+      content: var(--tw-content);
+      @apply flex justify-center items-center size-10 text-grey-navy bg-light-grey rounded-md md:size-14;
     }
   }
 }
