@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
 // Import data from external files
-import quizzData from './src/data/data.json';
+import quizzesData from './src/data/data.json';
 
 export default defineConfig({
   // Plugins configurations
@@ -13,7 +13,7 @@ export default defineConfig({
         resolve(__dirname, './src/templates'),
         resolve(__dirname, './src/templates/partials'),
       ],
-      context: quizzData
+      context: quizzesData
     })
   ],
   // Build configurations
