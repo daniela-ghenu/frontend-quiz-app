@@ -1,0 +1,40 @@
+<section class="container">
+  <form class="flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
+    <div class="xl:w-[40%]">
+      <p class="mb-3 font-light italic text-grey-navy md:text-xl md:mb-6">Question 6 of 10</p>
+      <h1 class="mb-6 text-xl font-medium leading-tight md:text-4xl md:mb-10 xl:mb-44">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h1>
+      <div class="progress-bar | w-full p-1 bg-white rounded-full" aria-hidden="true">
+        <div class="progress | w-[60%] h-2 bg-purple rounded-full"></div>
+      </div>
+    </div>
+
+    <div class="text-lg font-medium md:text-[1.75rem] xl:w-[48%]">
+      <div class="answers | flex flex-col gap-4 md:gap-6">
+        <label for="option-1" class="answer | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <input id="option-1" class="sr-only" type="radio" name="answer" value="4.5 : 1">
+          <span>4.5 : 1</span>
+        </label>
+  
+        <label for="option-2" class="answer | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <input id="option-2" class="sr-only" type="radio" name="answer" value="3 : 1">
+          <span>3 : 1</span>
+        </label>
+
+        <label for="option-3" class="answer | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <input id="option-3" class="sr-only" type="radio" name="answer" value="2.5 : 1">
+          <span>2.5 : 1</span>
+        </label>
+
+        <label for="option-4" class="answer | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <input id="option-4" class="sr-only" type="radio" name="answer" value="5 : 1">
+          <span>5 : 1</span>
+        </label>
+      </div>
+      <input class="w-full mt-4 p-3.5 text-center text-white bg-purple [@media(any-hover:hover){&:hover}]:bg-opacity-50 rounded-xl cursor-pointer md:mt-8 md:p-8 md:rounded-3xl" type="submit" value="Submit Answer">
+      <div class="hidden">
+        <svg>...</svg>
+        <p>Please, select an answer</p>
+      </div>
+    </div>
+  </form>
+</section>
