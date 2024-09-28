@@ -47,7 +47,6 @@ export default {
       }
     }
   },
-
   plugins: [
     function ({ addComponents }) {
       addComponents({

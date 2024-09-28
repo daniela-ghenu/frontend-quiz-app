@@ -1,24 +1,20 @@
-{{#> layout}}
-<section class="container flex flex-col gap-10 md:gap-16 xl:flex-row xl:justify-between xl:gap-24">
-  <div class="heading | xl:w-[40%]">
-    <h1 class="text-[2.5rem] md:text-[4rem] font-light leading-none mb-4 xl:mb-12">
-      Welcome to the <span class="font-medium inline md:block">Frontend Quiz!</span>
-    </h1>
-    <p class="md:text-xl italic text-grey-navy">Pick a subject to get started.</p>
-  </div>
-  <div class="content js-quizzes | xl:w-[48%]">
-    <ul class="flex flex-col gap-4 md:gap-6">
-      {{#each quizzes}}
-       <li>
-        <button class="flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" id="{{title}}" type="button">
-          <span class="p-2 rounded-lg" style="background-color: {{iconBgColor}};">
-            <img class="size-7 md:size-auto" src="{{icon}}" alt="{{title}} icon">
-          </span>
-          <h2 class="text-lg font-medium md:text-[1.75rem]">{{title}}</h2>
-        </button>
-       </li>
-      {{/each}}
-      </ul>
-  </div>
-</section>
-{{/layout}}
+<!DOCTYPE html>
+<html lang="en" class="light-theme">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<title>Frontend Mentor | Frontend quiz app</title>
+	</head>
+	<body class="overflow-x-hidden font-sans font-normal text-dark-navy bg-light-grey bg-no-repeat bg-mobile-light md:bg-tablet-light xl:bg-desktop-light xl:bg-cover">
+		{{> sprite}}
+    
+		{{> header}}
+
+		<main class="js-main-content | py-8 md:pt-0">
+			{{> home}}
+		</main>
+
+		<script src="./src/index.js" type="module"></script>
+	</body>
+</html>
