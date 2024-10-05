@@ -4,16 +4,23 @@ import Handlebars from "handlebars";
 
 // Import templates and partials
 import question from "./templates/partials/question.hbs?raw";
+import result from "./templates/partials/result.hbs?raw";
+import quizLabel from "./templates/partials/quiz-label.hbs?raw";
 
 // Register partials
 Handlebars.registerPartial("question", question);
+Handlebars.registerPartial("result", result);
+Handlebars.registerPartial("quizLabel", quizLabel);
 
-// Compile templates
-const questionTemplate = Handlebars.compile(question);
+// Compile partials
+const questionPartial = Handlebars.compile(question);
+const resultPartial = Handlebars.compile(result);
+const quizLabelPartial = Handlebars.compile(quizLabel);
 
 let score = 0;
 const mainContainer = document.querySelector(".js-main-content");
 
+// Handle quiz subject selection
 document.querySelectorAll(".js-quiz-button")?.forEach(button => {
   button.addEventListener("click", () => handleQuizSelection(button));
 });
@@ -58,26 +65,33 @@ function handleQuizSelection(button) {
         displayProgress(questionNumber);
 
       } else {
-        console.log("Display the score", score);
+        displayResult(maxQuestions, score);
+        insertQuizLabel(quizSubject);
+        
+        document.querySelector(".js-play-again")?.addEventListener("click", () => {
+          window.location.reload();
+        });
       }
   });
 }
 
 function insertQuizLabel(quiz) {
-  // Select header label to display the quiz information
-  const quizLabel = document.querySelector(".js-quiz-label");
-  const quizIcon = quizLabel.querySelector(".js-quiz-icon");
-  const quizText = quizLabel.querySelector(".js-quiz-text");
+  const {title, icon, iconBgColor} = quiz;
 
-  // Select quiz data to display in the header
-  quizLabel.style.visibility = "visible";
-  quizIcon.src = quiz.icon;
-  quizIcon.parentElement.style.backgroundColor = quiz.iconBgColor;
-  quizText.textContent = quiz.title;
+  // Select all labels to display the quiz information
+  document.querySelectorAll(".js-quiz-subject").forEach(quizLabel => {
+    quizLabel.innerHTML = quizLabelPartial({
+      title,
+      icon,
+      iconBgColor
+    });
+
+    quizLabel.style.visibility = "visible";
+  });
 }
 
 function displayQuestion(maxQuestions, questionNumber, currentQuestion) {
-  mainContainer.innerHTML = questionTemplate({
+  mainContainer.innerHTML = questionPartial({
     maxQuestions,
     questionNumber,
     currentQuestion
@@ -86,6 +100,13 @@ function displayQuestion(maxQuestions, questionNumber, currentQuestion) {
 
 function displayProgress(questionNumber) {
   document.querySelector(".js-progress").style.width = `${(questionNumber + 1)*10}%`;
+}
+
+function displayResult(maxQuestions, score) {
+  mainContainer.innerHTML = resultPartial({
+    maxQuestions,
+    score
+  });
 }
 
 function validateOption(option, answer) {

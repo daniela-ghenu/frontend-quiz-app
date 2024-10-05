@@ -8,19 +8,15 @@
   <div class="content | xl:w-[48%]">
     <div class="flex flex-col justify-center items-center gap-4 p-8 rounded-xl bg-white shadow-card md:gap-10 md:p-12 md:rounded-3xl">
        {{!-- Quiz Label --}}
-      <div class="js-quiz-label | flex items-center gap-4 md:gap-6">
-        <span class="p-2 rounded-lg" style="background-color: #fff1e9">
-          <img class="js-quiz-icon | size-7 md:size-auto" src="/images/icon-html.svg" alt="Quiz icon">
-        </span>
-        <p class="js-quiz-text | text-lg font-medium md:text-[1.75rem]">HTML</p>
-      </div>
+      <div class="js-quiz-subject"></div>
+      
       {{!-- Score info --}}
       <div class="space-y-4 text-center">
-        <p class="text-[5.5rem] font-medium text-dark-navy leading-none md:text-[9rem]">8</p>
-        <p class="text-lg text-grey-navy md:text-2xl">out of 10</p>
+        <p class="text-[5.5rem] font-medium text-dark-navy leading-none md:text-[9rem]">{{score}}</p>
+        <p class="text-lg text-grey-navy md:text-2xl">out of {{maxQuestions}}</p>
       </div>
     </div>
-    <button class="w-full mt-4 p-3.5 text-lg font-medium text-center text-white bg-purple [@media(any-hover:hover){&:hover}]:bg-opacity-50 rounded-xl cursor-pointer md:mt-8 md:p-8 md:text-[1.75rem] md:rounded-3xl" type="button">
+    <button class="js-play-again | w-full mt-4 p-3.5 text-lg font-medium text-center text-white bg-purple [@media(any-hover:hover){&:hover}]:bg-opacity-50 rounded-xl cursor-pointer md:mt-8 md:p-8 md:text-[1.75rem] md:rounded-3xl" type="button">
       Play Again
     </button>
   </div>
