@@ -36,9 +36,12 @@ function handleQuizSelection(button) {
     e.preventDefault();
     const submitBtn = mainContainer.querySelector('input[type="submit"]');
     const selectedOption = mainContainer.querySelector('input[name="options"]:checked');
+    const errorMessage = document.querySelector(".js-error-container");
+
+    errorMessage.style.display = "none";
 
     if(!selectedOption) {
-      console.log("Please select an answer");
+      errorMessage.style.display = "flex";
       return;
     }
 
@@ -86,11 +89,21 @@ function displayProgress(questionNumber) {
 }
 
 function validateOption(option, answer) {
+  const optionsList = option.closest(".js-options");
+  optionsList?.classList.add("disable-selection");
+
   if(option.value === answer) {
-    console.log("Correct answer");
+    option.parentElement.classList.add("correct");
     score ++;
-   
+    
   } else {
-    console.log("Wrong answer");
+    option.parentElement.classList.add("incorrect");
+
+    // If the selected option is incorrect, show the correct option
+    optionsList.querySelectorAll('input[name="options"]')?.forEach(inputOption => {
+      if(inputOption.value === answer) {
+        inputOption.parentElement.querySelector(".checkmark").style.display = "block";
+      }
+    });
   }
 }

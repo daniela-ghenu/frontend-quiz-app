@@ -21,17 +21,52 @@
 }
 
 @layer components {
-  .answers {
+  /* Options list */
+  .options {
     counter-reset: count;
+
+    &.disable-selection > label {
+      pointer-events: none;
+      user-select: none;
+      cursor: not-allowed;
+    }
   }
 
-  .answer {
-    counter-increment: count;
-
-    &::before {
-      --tw-content: counter(count, upper-alpha);
-      content: var(--tw-content);
-      @apply flex justify-center items-center size-10 text-grey-navy bg-light-grey rounded-md md:size-14;
+  label {
+    &.option {
+      counter-increment: count;
+  
+      &::before {
+        --tw-content: counter(count, upper-alpha);
+        content: var(--tw-content);
+        @apply flex justify-center items-center flex-shrink-0 size-10 text-grey-navy bg-light-grey rounded-md md:size-14;
+      }
+      
+      /* Styles for correct answer */
+      &.correct {
+        @apply border-green;
+      
+        &::before {
+          @apply bg-green;
+        }
+  
+        & .checkmark {
+          @apply block;
+        }
+      }
+      
+      /* Styles for wrong answer */
+      &.incorrect {
+        @apply border-red;
+  
+        &::before {
+          @apply bg-red;
+        }
+  
+        & .dismiss {
+          @apply block;
+        }
+      }
     }
   }
 }

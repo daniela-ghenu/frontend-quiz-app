@@ -7,19 +7,31 @@
         <div class="js-progress | h-2 bg-purple rounded-full"></div>
       </div>
     </div>
-    <div class="text-lg font-medium md:text-[1.75rem] xl:w-[48%]">
-      <div class="answers | flex flex-col gap-4 md:gap-6">
+    <div class="text-lg font-medium md:text-2xl xl:w-[48%]">
+      <div class="options js-options | flex flex-col gap-4 md:gap-6">
         {{#each currentQuestion.options}}
-          <label for="option-{{@index}}" class="answer | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <label for="option-{{@index}}" class="option | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
             <input id="option-{{@index}}" class="sr-only" type="radio" name="options" value="{{this}}">
             <span>{{this}}</span>
+            
+            <svg class="checkmark | hidden flex-shrink-0 size-6 md:size-auto ms-auto" width="32" height="32">
+              <use xlink:href="#icon-correct"></use>
+            </svg>
+
+            <svg class="dismiss | hidden flex-shrink-0 size-6 md:size-auto ms-auto" width="32" height="32">
+              <use xlink:href="#icon-error"></use>
+            </svg>
           </label>
         {{/each }}
       </div>
       <input class="w-full mt-4 p-3.5 text-center text-white bg-purple [@media(any-hover:hover){&:hover}]:bg-opacity-50 rounded-xl cursor-pointer md:mt-8 md:p-8 md:rounded-3xl" type="submit" value="Submit Answer">
-      <div class="hidden">
-        <svg>...</svg>
-        <p>Please, select an answer</p>
+      
+      {{!-- Error message --}}
+      <div class="js-error-container | hidden justify-center items-center gap-2 mt-3 md:mt-8">
+        <svg class="size-6 md:size-auto" width="32" height="32" aria-hidden="true" focusable="false">
+          <use xlink:href="#icon-error"></use>
+        </svg>
+        <p class="text-[1.125rem] font-normal text-red md:text-2xl">Please, select an answer</p>
       </div>
     </div>
   </form>
