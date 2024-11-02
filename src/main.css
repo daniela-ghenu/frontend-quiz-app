@@ -26,9 +26,15 @@
     counter-reset: count;
 
     &.disable-selection > label {
-      pointer-events: none;
-      user-select: none;
-      cursor: not-allowed;
+      @apply pointer-events-none select-none cursor-not-allowed;
+
+      @media (hover: hover) and (pointer: fine) {
+        pointer-events: unset;
+
+        &::before {
+          @apply text-grey-navy bg-light-grey;
+        }
+      }
     }
   }
 
@@ -47,7 +53,7 @@
         @apply border-green;
       
         &::before {
-          @apply bg-green;
+          @apply bg-green text-white;
         }
   
         & .checkmark {
@@ -60,7 +66,7 @@
         @apply border-red;
   
         &::before {
-          @apply bg-red;
+          @apply bg-red text-white;
         }
   
         & .dismiss {

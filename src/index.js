@@ -111,8 +111,7 @@ function displayResult(maxQuestions, score) {
 
 function validateOption(option, answer) {
   const optionsList = option.closest(".js-options");
-  optionsList?.classList.add("disable-selection");
-
+  
   if(option.value === answer) {
     option.parentElement.classList.add("correct");
     score ++;
@@ -121,10 +120,20 @@ function validateOption(option, answer) {
     option.parentElement.classList.add("incorrect");
 
     // If the selected option is incorrect, show the correct option
-    optionsList.querySelectorAll('input[name="options"]')?.forEach(inputOption => {
+    optionsList.querySelectorAll('input[name="options"]').forEach(inputOption => {
       if(inputOption.value === answer) {
         inputOption.parentElement.querySelector(".checkmark").style.display = "block";
       }
     });
   }
+
+  // Disable options after validation
+  optionsList?.classList.add("disable-selection");
+  optionsList?.querySelectorAll('input[name="options"]').forEach(inputOption => {
+    const optionLabel = inputOption.parentElement;
+
+    if(!(optionLabel.classList.contains("correct") || optionLabel.classList.contains("incorrect"))) {
+      inputOption.disabled = "true";
+    }
+  });
 }

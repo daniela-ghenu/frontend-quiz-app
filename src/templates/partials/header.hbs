@@ -1,14 +1,14 @@
 <header class="container flex justify-between pt-6 pb-4 md:py-10 xl:py-20">
   <div class="js-quiz-subject | invisible"></div>
   <!-- Light/Dark theme switcher -->
-  <label for="theme-toggle" class="inline-flex items-center ms-auto space-x-2 md:space-x-4 cursor-pointer">
+  <label for="theme-toggle" class="inline-flex items-center ms-auto space-x-2 cursor-pointer md:space-x-4">
     <svg class="text-grey-navy" width="24" height="24" aria-hidden="true" focusable="false">
       <title>Light Theme Icon</title>
       <use xlink:href="#icon-sun-dark"></use>
     </svg>
     <!-- Theme toggle -->
-    <span class="relative">
-      <input id="theme-toggle" type="checkbox" class="hidden peer" aria-label="Toggle dark/light theme">
+    <span class="relative has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-dark-navy rounded-full">
+      <input id="theme-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark/light theme">
       <div class="w-10 h-[1.6rem] md:w-12 md:h-7 rounded-full bg-purple"></div>
       <div class="absolute inset-y-[1px] left-0 m-1 size-4 md:size-5 md:inset-y-0 rounded-full bg-white peer-checked:translate-x-full transition-all"></div>
     </span>

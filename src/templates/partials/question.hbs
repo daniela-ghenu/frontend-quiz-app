@@ -10,7 +10,7 @@
     <div class="text-lg font-medium md:text-2xl xl:w-[48%]">
       <div class="options js-options | flex flex-col gap-4 md:gap-6">
         {{#each currentQuestion.options}}
-          <label for="option-{{@index}}" class="option | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
+          <label for="option-{{@index}}" class="option | flex items-center gap-4 w-full p-2.5 border-[3px] border-white rounded-xl bg-white shadow-card has-[:checked]:border-purple has-[:checked]:before:text-white has-[:checked]:before:bg-purple has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-dark-navy has-[:disabled]:opacity-75 hover:before:text-purple hover:before:bg-purple hover:before:bg-opacity-10 cursor-pointer md:gap-8 xl:p-4 xl:rounded-3xl">
             <input id="option-{{@index}}" class="sr-only" type="radio" name="options" value="{{this}}">
             <span>{{this}}</span>
             
