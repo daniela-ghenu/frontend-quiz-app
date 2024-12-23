@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./*.html", "./src/**/*.{html,js,hbs}"],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     screens: {
       'sm': '576px',
@@ -10,7 +13,11 @@ export default {
       '2xl': '1440px'
     },
     colors: {
-      'purple': '#A729F5',
+      'purple': {
+        100: '#F6E7FF',
+        500: '#D394FA',
+        700: '#A729F5',
+      },
       'dark-navy': '#313E51',
       'navy': '#3B4D66',
       'grey-navy': '#626C7F', 
@@ -35,7 +42,9 @@ export default {
     extend: {
       boxShadow: {
         'card': '0 16px 40px 0 rgba(143, 160, 193, 0.14)',
+        'card-dark': '0 16px 40px 0 rgba(49, 62, 81, 0.14)',
         'card-hover': '0 16px 50px 0 rgba(143, 160, 193, 0.3);',
+        'card-hover-dark': '0 16px 40px 0 rgba(49, 62, 81, 0.3)',
       },
       backgroundImage: {
         'mobile-dark': "url('/images/pattern-background-mobile-dark.svg')",

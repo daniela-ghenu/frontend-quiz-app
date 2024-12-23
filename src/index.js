@@ -45,10 +45,12 @@ function handleQuizSelection(button) {
     const selectedOption = mainContainer.querySelector('input[name="options"]:checked');
     const errorMessage = document.querySelector(".js-error-container");
 
-    errorMessage.style.display = "none";
+    errorMessage.style.opacity = "0";
+    errorMessage.setAttribute("aria-hidden", "true");
 
     if(!selectedOption) {
-      errorMessage.style.display = "flex";
+      errorMessage.style.opacity = "1";
+      errorMessage.setAttribute("aria-hidden", "false");
       return;
     }
 

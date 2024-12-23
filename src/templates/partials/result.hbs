@@ -6,17 +6,17 @@
     <p class="font-medium inline md:block">You scored...</p>
   </div>
   <div class="content | xl:w-[48%]">
-    <div class="flex flex-col justify-center items-center gap-4 p-8 rounded-xl bg-white shadow-card md:gap-10 md:p-12 md:rounded-3xl">
+    <div class="flex flex-col justify-center items-center gap-4 p-8 rounded-xl bg-white dark:bg-navy shadow-card md:gap-10 md:p-12 md:rounded-3xl">
        {{!-- Quiz Label --}}
       <div class="js-quiz-subject"></div>
       
       {{!-- Score info --}}
       <div class="space-y-4 text-center">
-        <p class="text-[5.5rem] font-medium text-dark-navy leading-none md:text-[9rem]">{{score}}</p>
-        <p class="text-lg text-grey-navy md:text-2xl">out of {{maxQuestions}}</p>
+        <p class="text-[5.5rem] font-medium text-dark-navy dark:text-white leading-none md:text-[9rem]">{{score}}</p>
+        <p class="text-lg text-grey-navy dark:text-light-bluish md:text-2xl">out of {{maxQuestions}}</p>
       </div>
     </div>
-    <button class="js-play-again | w-full mt-4 p-3.5 text-lg font-medium text-center text-white bg-purple [@media(any-hover:hover){&:hover}]:bg-opacity-50 rounded-xl cursor-pointer md:mt-8 md:p-8 md:text-[1.75rem] md:rounded-3xl" type="button">
+    <button class="js-play-again | w-full mt-4 p-3.5 text-lg font-medium text-center text-white bg-purple-700 transition-[background-color] duration-300 hover:bg-purple-500 rounded-xl cursor-pointer md:mt-8 md:p-8 md:text-[1.75rem] md:rounded-3xl" type="button">
       Play Again
     </button>
   </div>

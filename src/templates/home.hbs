@@ -3,13 +3,13 @@
     <h1 class="text-[2.5rem] md:text-[4rem] font-light leading-none mb-4 xl:mb-12">
       Welcome to the <span class="font-medium inline md:block">Frontend Quiz!</span>
     </h1>
-    <p class="md:text-xl italic text-grey-navy">Pick a subject to get started.</p>
+    <p class="italic text-grey-navy dark:text-light-bluish md:text-xl">Pick a subject to get started.</p>
   </div>
   <div class="content | xl:w-[48%]">
     <ul class="flex flex-col gap-4 md:gap-6">
       {{#each quizzes}}
        <li>
-        <button class="js-quiz-button | flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white hover:shadow-card-hover hover:transition-shadow" id="{{title}}" type="button" aria-label="Opens {{title}} quizz">
+        <button class="js-quiz-button | flex items-center gap-4 w-full p-3 rounded-xl md:gap-8 xl:rounded-3xl xl:p-5 shadow-card bg-white transition-shadow duration-300 hover:shadow-card-hover dark:bg-navy dark:shadow-card-dark dark:hover:shadow-card-hover-dark" id="{{title}}" type="button" aria-label="Opens {{title}} quizz">
           <span class="p-2 rounded-lg" style="background-color: {{iconBgColor}};">
             <img class="size-7 md:size-auto select-none" src="{{icon}}" alt="{{title}} icon" draggable="false">
           </span>
