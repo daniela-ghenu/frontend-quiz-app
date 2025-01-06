@@ -4,6 +4,7 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
+  darkMode: 'selector', // for toggling dark mode manually
   theme: {
     screens: {
       'sm': '576px',
