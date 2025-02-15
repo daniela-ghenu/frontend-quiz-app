@@ -6,3 +6,5 @@ A simple web quiz application where users can:
 - receive instant feedback on their answers
 - view their final score
 - replay to choose another subject
+
+![Frontend Quiz Web App](public/images/project-screenshot.png)
