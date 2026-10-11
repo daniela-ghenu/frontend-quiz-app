@@ -3,15 +3,15 @@ import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
 // Import data from external files
-import quizzesData from './src/data/data.json';
+import quizzesData from './src/data/data.json' with { type: 'json' };
 
 export default defineConfig({
   // Plugins configurations
   plugins: [
     handlebars({
       partialDirectory: [
-        resolve(__dirname, './src/templates'),
-        resolve(__dirname, './src/templates/partials'),
+        resolve(import.meta.dirname, './src/templates'),
+        resolve(import.meta.dirname, './src/templates/partials'),
       ],
       context: quizzesData
     })
@@ -20,7 +20,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html')
+        main: resolve(import.meta.dirname, 'index.html')
       }
     }
   }
